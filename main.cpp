@@ -1,4 +1,4 @@
-#include "Section.h"
+#include "Sucursales.hpp"
 
 using namespace std;
 
@@ -12,10 +12,13 @@ int main(int argc, char **argv)
     l1.addProducto(p1);
     l1.addProducto(p2);
     
-    cout << l1.toString() << endl;
+    Sucursales s1;
     
-    l1.deleteProducto(2);
+    s1.addSection(l1);
     
-    cout << l1.toString() << endl; 
+    cout << s1.toString_Section(20);
+    
+    
+    
     
 }
