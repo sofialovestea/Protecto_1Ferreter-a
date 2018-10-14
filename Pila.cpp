@@ -10,7 +10,7 @@
 
 Pila_Producto::Pila_Producto()
 {
-   
+
 }
 
 void Pila_Producto:: push(Producto p)
@@ -19,7 +19,7 @@ void Pila_Producto:: push(Producto p)
     nuevo->_producto=p;
     nuevo->sgte=primero;
     primero=nuevo;
-    
+
 }
 
 
@@ -35,14 +35,14 @@ bool Pila_Producto::PilaVacia()
 }
 Producto Pila_Producto:: top()
 {
-    
+
     if(primero!=NULL)
     {
         return primero->_producto;
     }
     else
     {
-        cout<<"\nPila vacia\n";
+        std::cout<<"\nPila vacia\n";
     }
     return Producto();
 }
@@ -56,24 +56,27 @@ void Pila_Producto:: pop()
         delete(aux);
     }
     else{
-        cout<<"\n Lista vacia\n";
+        std::cout<<"\n Lista vacia\n";
     }
 }
 
-void Pila_Producto::mostrar()
+std::string Pila_Producto::mostrar()
 {
+    std::stringstream ss;
     nodo *aux=new nodo();
     aux=primero;
     if(primero!=NULL)
     {
         while(aux!=NULL)
         {
-            cout<<"El nombre del producto es : "<<aux->_producto.get_nombre()<<endl;
-            cout<<"El ID es : "<<aux->_producto.get_id()<<endl;
+            ss<<"El nombre del producto es : "<<aux->_producto.get_nombre()<<'\n';
+            ss<<"El ID es : "<<aux->_producto.get_id()<<'\n';
             aux=aux->sgte;
         }
     }
-    else{cout<<"\n Lista vacia\n";}
+    else{ss<<"\n Lista vacia\n";}
+
+    return ss.str();
 }
 
 Pila_Producto::~Pila_Producto()

@@ -29,7 +29,6 @@ Sucursales::Sucursales (short int var_1, string var_2)
 string Sucursales::toString()
 {
     stringstream ss;
-<<<<<<< HEAD
 
     ss << "Id de la Sucursal: " << id << "\n";
     ss << "Ubicación de la Sucursal: " << ubicacion << "\n";
@@ -75,11 +74,39 @@ string Sucursales::toString_Section(short int var)
 
     return ss.str();
 }
-=======
-    
-    ss << "Id de la Sucursal: " << id << "\n";
-    ss << "Ubicación de la Sucursal: " << ubicacion << "\n";
-    
+
+string Sucursales::toString_AllSections()
+{
+    stringstream ss;
+
+    ss << "Sucursal: " << ubicacion << "\n" << "Numero: " << id << "\n";
+
+    std::list<Section>::iterator it_out = list_ofSections.begin();
+    for(it_out = list_ofSections.begin(); it_out != list_ofSections.end(); it_out++)
+    {
+        Section pivot = *it_out;
+        ss << pivot.toString();
+        ss << "\n";
+    }
+
+
     return ss.str();
 }
->>>>>>> 10c841cf9d1bb1365e6abda1503ec2c6a195dae5
+
+string Sucursales::toString_AllSectionsMin()
+{
+    stringstream ss;
+
+    ss << "Sucursal: " << ubicacion << "\n" << "Numero: " << id << "\n";
+
+    std::list<Section>::iterator it_out = list_ofSections.begin();
+    for(it_out = list_ofSections.begin(); it_out != list_ofSections.end(); it_out++)
+    {
+        Section pivot = *it_out;
+        ss << pivot.toStringMin();
+        ss << "\n";
+    }
+
+
+    return ss.str();
+}

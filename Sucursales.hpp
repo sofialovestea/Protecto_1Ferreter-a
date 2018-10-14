@@ -12,17 +12,13 @@
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
-<<<<<<< HEAD
 #include <Section.h>
 
-=======
->>>>>>> 10c841cf9d1bb1365e6abda1503ec2c6a195dae5
 using namespace std;
 
 class Sucursales
 {
 private:
-<<<<<<< HEAD
 
     short int id;
     string ubicacion;
@@ -36,33 +32,22 @@ public:
     short int get_id();
     string get_ubicacion();
 
+    //Metodos propios de la clase Sucursal
     void addSection(Section);
     void deleteSection(short int);
     string toString_Section(short int);
     string toString_AllSections();
+    string toString_AllSectionsMin(); //Solo imprime la cabezera de cada sección (sin los productos)
+
+    //Metodos arrastrados de otras clases
+    void addProducto(short int, Producto); //El primer numero entero es el num de sección
+    void deleteProducto(short int, short int);
+    string toString_Producto(short int, short int);
 
     Sucursales();
     Sucursales(short int, string);
     ~Sucursales(){};
 
-=======
-    
-    short int id;
-    string ubicacion;
-    
-public:
-    
-    void set_id (short int);
-    void set_ubicacion (string);
-    
-    short int get_id();
-    string get_ubicacion();
-    
-    Sucursales();
-    Sucursales(short int, string);
-    ~Sucursales(){};
-    
->>>>>>> 10c841cf9d1bb1365e6abda1503ec2c6a195dae5
     string toString();
 };
 

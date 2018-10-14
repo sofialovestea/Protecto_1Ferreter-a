@@ -10,15 +10,7 @@
 #define Pila_hpp
 
 #include <stdio.h>
-<<<<<<< HEAD
 #include "Producto.h"
-
-using namespace std;
-=======
-#include "Producto.hpp"
-
-
->>>>>>> 10c841cf9d1bb1365e6abda1503ec2c6a195dae5
 
 struct nodo {
     Producto _producto;
@@ -30,21 +22,21 @@ typedef struct nodo *Puntero;
 
 class Pila_Producto
 {
-    
-    
+
+
 public:
-    
+
     Pila_Producto();
     void push (Producto);
     void pop();
     Producto top();
     bool PilaVacia();
-    void mostrar();
+    std::string mostrar();
     void Destruir();
     int getId();
-    string getNombre();
+    std::string getNombre();
     ~Pila_Producto();
-    
+
 private:
     Puntero primero;
     Producto _producto;

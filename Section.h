@@ -26,7 +26,6 @@ class Section
 
     void addProducto(Producto);
     void deleteProducto(short int);
-    Producto findProducto(short int);
     std::string toString(); //Imprime la Seccion con todo y sus productos
     std::string toStringProducto(short int);
     std::string toStringMin(); //Solo imprime numero y nombre de la seccion
