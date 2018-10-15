@@ -10,61 +10,33 @@
 #define Pila_hpp
 
 #include <stdio.h>
-#include "Producto.hpp"
+#include "Producto.h"
 
-//PILA CARRITO
-class Pila_Carrito
-{
-    struct nodo
-    {
-        Producto miProducto;
-        struct nodo *sgte;
-    };
-    
-    typedef struct nodo *Puntero;
-    
-    
-public:
-    Pila_Carrito();
-    void push(Producto);
-    Producto top();
-    void pop(void );
-    bool PilaVacia(void);
-    void mostrar(void);
-    void DestruirPila(void);
-    ~Pila_Carrito();
-    //void menu(void);
-    
-private:
-    Puntero primero;
+struct nodo {
+    Producto _producto;
+    struct nodo *sgte;
+    //struct nodo *primero;
 };
 
-//PILA PRODUCTO
+typedef struct nodo *Puntero;
+
 class Pila_Producto
 {
-    
-    struct nodo {
-        Producto _producto;
-        struct nodo *sgte;
-        //struct nodo *primero;
-    };
-    
-    typedef struct nodo *Puntero;
-    
-    
+
+
 public:
-    
+
     Pila_Producto();
     void push (Producto);
     void pop();
     Producto top();
     bool PilaVacia();
-    void mostrar();
+    std::string mostrar();
     void Destruir();
     int getId();
-    string getNombre();
+    std::string getNombre();
     ~Pila_Producto();
-    
+
 private:
     Puntero primero;
     Producto _producto;

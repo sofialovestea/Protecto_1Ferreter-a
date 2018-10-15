@@ -10,7 +10,7 @@
 
 Pila_Producto::Pila_Producto()
 {
-   
+
 }
 
 void Pila_Producto:: push(Producto p)
@@ -19,7 +19,7 @@ void Pila_Producto:: push(Producto p)
     nuevo->_producto=p;
     nuevo->sgte=primero;
     primero=nuevo;
-    
+
 }
 
 
@@ -35,14 +35,14 @@ bool Pila_Producto::PilaVacia()
 }
 Producto Pila_Producto:: top()
 {
-    
+
     if(primero!=NULL)
     {
         return primero->_producto;
     }
     else
     {
-        cout<<"\nPila vacia\n";
+        std::cout<<"\nPila vacia\n";
     }
     return Producto();
 }
@@ -56,12 +56,13 @@ void Pila_Producto:: pop()
         delete(aux);
     }
     else{
-        cout<<"\n Lista vacia\n";
+        std::cout<<"\n Lista vacia\n";
     }
 }
 
-void Pila_Producto::mostrar()
+std::string Pila_Producto::mostrar()
 {
+    std::stringstream ss;
     nodo *aux=new nodo();
     aux=primero;
     if(primero!=NULL)
@@ -83,71 +84,4 @@ Pila_Carrito::~Pila_Carrito()
 Pila_Carrito::Pila_Carrito()
 {
     
-}
-
-void Pila_Carrito:: push(Producto p)
-{
-    nodo *nuevo=new nodo();
-    nuevo->miProducto=p;
-    nuevo->sgte=primero;
-    primero=nuevo;
-    
-}
-
-
-bool Pila_Carrito::PilaVacia()
-{
-    if(primero == NULL)
-    {
-        return true;
-    }else
-    {
-        return false;
-    }
-}
-Producto Pila_Carrito:: top()
-{
-    
-    if(primero!=NULL)
-    {
-        return primero->miProducto;
-    }
-    else
-    {
-        cout<<"\nPila vacia\n";
-    }
-    return Producto();
-}
-void Pila_Carrito:: pop()
-{
-    nodo *aux=new nodo();
-    aux=primero;
-    if(primero!=NULL)
-    {
-        primero=aux->sgte;
-        delete(aux);
-    }
-    else{
-        cout<<"\n Lista vacia\n";
-    }
-}
-
-void Pila_Carrito::mostrar()
-{
-    nodo *aux=new nodo();
-    aux=primero;
-    if(primero!=NULL)
-    {
-        while(aux!=NULL)
-        {
-            cout<<aux->miProducto.toString()<<endl;
-            aux=aux->sgte;
-        }
-    }
-    else{cout<<"\n Lista vacia\n";}
-}
-
-Pila_Producto::~Pila_Producto()
-{
-    //dtor
 }
